@@ -46,6 +46,17 @@
 - [table_page_element_example](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_5/table_page_element_example)
 - [example_from_student](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_5/example_from_student)
 
+## lesson_6 — homework 4.1 (Special cases + PageFactory extended)
+
+Директория: [lesson_6](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_6)
+
+- [selenium4/drag_and_drop.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_6/selenium4/drag_and_drop.py)
+- [selenium4/add_remove_elements.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_6/selenium4/add_remove_elements.py)
+- [selenium4/relative_locator.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_6/selenium4/relative_locator.py)
+- [page_factory_extended_example](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_6/page_factory_extended_example)
+- [fluent_interface](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_6/fluent_interface)
+- [NOTES.md](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_6/NOTES.md)
+
 ## Запуск
 
 ```bash
@@ -56,4 +67,12 @@ python automation_practice_form/automation_practice_form_test_suite.py
 pytest TextBoxPageObject/test_text_box.py -v
 pytest TextBoxPageObjectWithPageFactory/test_text_box_pf.py -v
 python table_page_element_example/table_page_element_example.py
+
+cd ../lesson_6
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+python selenium4/drag_and_drop.py
+python selenium4/add_remove_elements.py
+python selenium4/relative_locator.py
+pytest page_factory_extended_example/test_student_registration_form_with_pf.py -v
 ```
