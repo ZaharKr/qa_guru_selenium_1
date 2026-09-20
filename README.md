@@ -69,6 +69,17 @@
 - [di_example.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_7/di_example.py)
 - [NOTES.md](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_7/NOTES.md)
 
+## lesson_8 — Pytest #2 (параметризация)
+
+Директория: [lesson_8](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_8)
+
+- [tests/test_parametrize_examples.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_8/tests/test_parametrize_examples.py)
+- [tests/test_text_box.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_8/tests/test_text_box.py)
+- [tests/test_login.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_8/tests/test_login.py)
+- [tests/test_registration.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_8/tests/test_registration.py)
+- [tests/test_viewport_indirect.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_8/tests/test_viewport_indirect.py)
+- [NOTES.md](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_8/NOTES.md)
+
 ## Запуск
 
 ```bash
@@ -89,6 +100,13 @@ python selenium4/relative_locator.py
 pytest page_factory_extended_example/test_student_registration_form_with_pf.py -v
 
 cd ../lesson_7
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+pytest
+pytest -m unit
+pytest -m smoke
+
+cd ../lesson_8
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 pytest
