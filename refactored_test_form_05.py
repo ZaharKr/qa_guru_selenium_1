@@ -1,114 +1,65 @@
 import time
-from selenium import webdriver
+
 from selenium.webdriver.common.by import By
 
-class TestSuite:
-    # Метод-конструктор: вызывается при создании нового объекта
+from chrome_setup import PAUSE, TEXT_BOX_URL, click_submit, create_driver
+
+USER_NAME = (By.ID, "userName")
+USER_EMAIL = (By.ID, "userEmail")
+CURRENT_ADDRESS = (By.ID, "currentAddress")
+PERMANENT_ADDRESS = (By.ID, "permanentAddress")
+OUTPUT = (By.ID, "output")
+
+
+class TextBoxTests:
     def __init__(self, url, driver):
-        # Note: pytest не работает с TestSuit-ами в которых есть конструктор!
-        self.__url = url
-        self.__driver = driver
+        self.url = url
+        self.driver = driver
 
-    # Метод для получения URL - значения скрытого атрибута (геттер)
-    def get_url(self):
-        return self.__url
+    def open(self):
+        self.driver.get(self.url)
+        time.sleep(PAUSE)
 
-    # Метод для получения Driver - значения скрытого атрибута (геттер) 
-    def get_driver(self):
-        return self.__driver
+    def fill(self, name="", email="", current="", permanent=""):
+        if name:
+            self.driver.find_element(*USER_NAME).send_keys(name)
+        if email:
+            self.driver.find_element(*USER_EMAIL).send_keys(email)
+        if current:
+            self.driver.find_element(*CURRENT_ADDRESS).send_keys(current)
+        if permanent:
+            self.driver.find_element(*PERMANENT_ADDRESS).send_keys(permanent)
+        click_submit(self.driver)
+        time.sleep(PAUSE)
 
-    # Обычный метод класса - тестовый метод
-    def test_case01(self):
-        try:
-            # 2. Открытие страницы
-            self.get_driver().get(self.get_url())
-            self.get_driver().maximize_window()
-            time.sleep(5)  # Пауза, чтобы визуально заметить открытие
+    def test_all_fields(self):
+        self.open()
+        name = "Иван Иванов"
+        email = "ivan@example.com"
+        current = "Москва, Тверская 1"
+        permanent = "СПб, Невский 10"
+        self.fill(name, email, current, permanent)
+        result = self.driver.find_element(*OUTPUT).text
+        assert name in result
+        assert email in result
+        assert current in result
+        assert permanent in result
+        print("OK: all fields")
 
-            # 3. Поиск элементов и заполнение полей
-            # Находим поле Full Name по его ID и вводим текст
-            full_name_field = self.get_driver().find_element(By.ID, "userName")
-            full_name_field.send_keys("Иван Иванов")
+    def test_name_and_email(self):
+        self.open()
+        self.fill(name="Пётр Петров", email="petr@mail.ru")
+        result = self.driver.find_element(*OUTPUT).text
+        assert "Пётр Петров" in result
+        assert "petr@mail.ru" in result
+        print("OK: name and email")
 
-            # Находим поле Email по его ID и вводим текст
-            email_field = self.get_driver().find_element(By.ID, "userEmail")
-            email_field.send_keys("ivan@example.com")
 
-            # Находим кнопку Submit по ее ID и кликаем
-            submit_button = self.get_driver().find_element(By.ID, "submit")
-            submit_button.click()
-
-            # 4. Проверка результата
-            time.sleep(5)  # Пауза, чтобы увидеть результат отправки
-            
-            # Находим блок с отправленными данными
-            result_box = self.get_driver().find_element(By.ID, "output")
-            
-            # Проверяем, что в блоке результата появился введенный текст
-            assert "Иван Иванов" in result_box.text
-            print("Тест 01 успешно пройден!")
-
-        finally:
-            # 5. Закрытие браузера в любом случае
-            print("Очищаем driver между тестами для чистоты эксперимента.")
-            #self.get_driver().close()
-            #self.get_driver().quit()
-            
-
-    # Обычный метод класса - тестовый метод
-    def test_case02(self):
-        try:
-            # 2. Открытие страницы
-            self.get_driver().get(self.get_url())
-            self.get_driver().maximize_window()
-            time.sleep(5)  # Пауза, чтобы визуально заметить открытие
-
-            # 3. Поиск элементов и заполнение полей
-            # Находим поле Full Name по его ID и вводим текст
-            full_name_field = self.get_driver().find_element(By.ID, "userName")
-            full_name_field.send_keys("Иван Иванов")
-
-            # Находим поле Email по его ID и вводим текст
-            email_field = self.get_driver().find_element(By.ID, "userEmail")
-            email_field.send_keys("ivan@example.com")
-
-            # Находим поле Permanent Adress по его ID и вводим текст
-            permanent_address_field = self.get_driver().find_element(By.ID, "permanentAddress")
-            permanent_address_field.send_keys("Ленинград, 3-я улица Строителей, 25")
-
-            # Находим кнопку Submit по ее ID и кликаем
-            submit_button = self.get_driver().find_element(By.ID, "submit")
-            submit_button.click()
-
-            # 4. Проверка результата
-            time.sleep(5)  # Пауза, чтобы увидеть результат отправки
-            
-            # Находим блок с отправленными данными
-            result_box = self.get_driver().find_element(By.ID, "output")
-            
-            # Проверяем, что в блоке результата появился введенный текст
-            assert "Иван Иванов" in result_box.text
-            print("Тест 02 успешно пройден!")
-
-            #self.get_driver().navigate().to("https://example.com") # нет в новых версиях
-
-            #self.get_driver().back()      # вернуться на предыдущую страницу
-            #self.get_driver().forward()   # пойти вперед по истории
-            #self.get_driver().refresh()   # перезагрузить текущую страницу
-            #self.get_driver().navigate().to("https://www.google.com/") # нет в новых версиях
-
-        finally:
-            # 5. Закрытие браузера в любом случае
-            print("Очищаем driver между тестами для чистоты эксперимента.")
-            #self.get_driver().close()
-            #self.get_driver().quit()
-
-    
-# 1. Запуск браузера Chrome
-url = "https://qa-guru.github.io/one-page-form/text-box.html"
-driver = webdriver.Chrome()
-
-test_suite = TestSuite(url, driver)
-test_suite.test_case01()
-test_suite.test_case02()
-
+if __name__ == "__main__":
+    driver = create_driver()
+    try:
+        suite = TextBoxTests(TEXT_BOX_URL, driver)
+        suite.test_all_fields()
+        suite.test_name_and_email()
+    finally:
+        driver.quit()

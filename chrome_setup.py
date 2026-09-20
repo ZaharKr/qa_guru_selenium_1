@@ -5,7 +5,9 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
-URL = "https://qa-guru.github.io/one-page-form/text-box.html"
+TEXT_BOX_URL = "https://qa-guru.github.io/one-page-form/text-box.html"
+LOGIN_URL = "https://qa-guru.github.io/one-page-form/login.html"
+URL = TEXT_BOX_URL
 PAUSE = 1
 
 
@@ -19,11 +21,18 @@ def create_driver(headless=True):
     return webdriver.Chrome(service=service, options=opts)
 
 
-def click_submit(driver):
-    button = driver.find_element(By.ID, "submit")
-    driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", button)
+def click_element(driver, element):
+    driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
     time.sleep(0.3)
     try:
-        button.click()
+        element.click()
     except Exception:
-        driver.execute_script("arguments[0].click();", button)
+        driver.execute_script("arguments[0].click();", element)
+
+
+def click_submit(driver):
+    click_element(driver, driver.find_element(By.ID, "submit"))
+
+
+def click_login_submit(driver):
+    click_element(driver, driver.find_element(By.ID, "submit-button"))
