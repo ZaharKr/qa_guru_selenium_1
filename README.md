@@ -57,6 +57,18 @@
 - [fluent_interface](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_6/fluent_interface)
 - [NOTES.md](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_6/NOTES.md)
 
+## lesson_7 — Pytest #1
+
+Директория: [lesson_7](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_7)
+
+- [pages/text_box_page.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_7/pages/text_box_page.py)
+- [pages/login_page.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_7/pages/login_page.py)
+- [tests/test_text_box.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_7/tests/test_text_box.py)
+- [tests/test_login.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_7/tests/test_login.py)
+- [tests/test_unit_di.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_7/tests/test_unit_di.py)
+- [di_example.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_7/di_example.py)
+- [NOTES.md](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_7/NOTES.md)
+
 ## Запуск
 
 ```bash
@@ -75,4 +87,11 @@ python selenium4/drag_and_drop.py
 python selenium4/add_remove_elements.py
 python selenium4/relative_locator.py
 pytest page_factory_extended_example/test_student_registration_form_with_pf.py -v
+
+cd ../lesson_7
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+pytest
+pytest -m unit
+pytest -m smoke
 ```
