@@ -34,13 +34,26 @@
 - [test_login_waits.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_3/test_login_waits.py)
 - [test_student_registration_form.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_3/test_student_registration_form.py)
 
+## lesson_5 — homework #5 (POM / PageFactory / PageElement)
+
+Директория: [lesson_5](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_5)
+
+- [automation_practice_form](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_5/automation_practice_form)
+- [TextBoxPageObject](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_5/TextBoxPageObject)
+- [TextBoxPageObjectWithPageFactory](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_5/TextBoxPageObjectWithPageFactory)
+- [the_simplest_page_factory](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_5/the_simplest_page_factory)
+- [calendar_page_element_with_selene](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_5/calendar_page_element_with_selene)
+- [table_page_element_example](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_5/table_page_element_example)
+- [example_from_student](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_5/example_from_student)
+
 ## Запуск
 
 ```bash
-cd lesson_3
+cd lesson_5
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-pytest examples/test_login.py -v
-python -m unittest examples.simple_test_student_registration_form
-python test_student_registration_form.py
+python automation_practice_form/automation_practice_form_test_suite.py
+pytest TextBoxPageObject/test_text_box.py -v
+pytest TextBoxPageObjectWithPageFactory/test_text_box_pf.py -v
+python table_page_element_example/table_page_element_example.py
 ```

@@ -1,0 +1,5 @@
+selenium
+webdriver-manager
+pytest
+selenium-page-factory
+selene
