@@ -1,7 +1,10 @@
+import sys
 import time
+from pathlib import Path
 
 from selenium.webdriver.common.by import By
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from chrome_setup import LOGIN_URL, PAUSE, click_login_submit, create_driver
 
 LOGIN_INPUT = (By.ID, "login-input")

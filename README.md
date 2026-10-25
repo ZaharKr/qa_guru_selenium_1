@@ -15,7 +15,10 @@
 
 Директория: [lesson_2](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_2)
 
-- [the_simplest_test_login_06.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_2/the_simplest_test_login_06.py)
+Пример с занятия:
+- [examples/the_simplest_test_login_06.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_2/examples/the_simplest_test_login_06.py)
+
+Своя работа:
 - [test_login_form.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_2/test_login_form.py)
 - [refactored_test_form_05.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_2/refactored_test_form_05.py)
 
