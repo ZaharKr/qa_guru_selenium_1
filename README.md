@@ -100,6 +100,18 @@
 - [mocks_demo](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_9/mocks_demo)
 - [NOTES.md](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_9/NOTES.md)
 
+## lesson_10 — Pytest: GitHub desktop/mobile
+
+Директория: [lesson_10](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_10)
+
+Своя работа (ДЗ):
+- [homework/test_skip.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_10/homework/test_skip.py) — skip по соотношению сторон
+- [homework/test_parametrize.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_10/homework/test_parametrize.py) — indirect
+- [homework/test_fixtures.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_10/homework/test_fixtures.py) — разные фикстуры
+- [NOTES.md](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_10/NOTES.md) — плюсы/минусы
+
+Примеры с занятия: [examples](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_10/examples)
+
 ## Запуск
 
 ```bash
@@ -126,4 +138,9 @@ pytest bdd_basket -v
 python -m unittest discover -s unittest_demo -v
 pytest mocks_demo -v
 # allure serve allure-results
+
+cd ../lesson_10
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+pytest homework -v
 ```
