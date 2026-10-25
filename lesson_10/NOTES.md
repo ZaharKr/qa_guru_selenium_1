@@ -4,19 +4,17 @@
 Доки: https://docs.pytest.org/en/7.1.x/how-to/parametrize.html  
 Wiki: https://github.com/qa-guru/knowledge-base/wiki/13.-Pytest
 
-## Что сдавать
-
-Только папка `homework/` — три подхода, как в курсе:
+## Подходы
 
 | Файл | Подход |
 |------|--------|
-| [homework/test_skip.py](homework/test_skip.py) | 1. skip по соотношению сторон |
-| [homework/test_parametrize.py](homework/test_parametrize.py) | 2. indirect-параметризация |
-| [homework/test_fixtures.py](homework/test_fixtures.py) | 3. разные фикстуры |
+| [homework/test_skip.py](homework/test_skip.py) | skip по соотношению сторон |
+| [homework/test_parametrize.py](homework/test_parametrize.py) | indirect-параметризация |
+| [homework/test_fixtures.py](homework/test_fixtures.py) | разные фикстуры |
 
-Примеры с занятия (не ДЗ): [examples/](examples/)
+Примеры с занятия: [examples/](examples/)
 
-## Плюсы / минусы подходов
+## Плюсы / минусы
 
 ### 1. skip внутри теста
 - **+** один набор размеров в фикстуре, легко добавить новый размер

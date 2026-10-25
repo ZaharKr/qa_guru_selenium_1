@@ -87,12 +87,9 @@
 
 Директория: [lesson_9](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_9)
 
-Примеры с занятия:
 - [examples/allure_the_simplest_example](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_9/examples/allure_the_simplest_example)
 - [examples/bdd_the_simplest_example](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_9/examples/bdd_the_simplest_example)
 - [examples/test_cov_the_simplest_example](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_9/examples/test_cov_the_simplest_example)
-
-Своя работа:
 - [allure_print_demo](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_9/allure_print_demo) — print-логика + Allure
 - [selenium_allure](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_9/selenium_allure) — Selenium + Allure
 - [bdd_basket](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_9/bdd_basket) — pytest-bdd
@@ -104,13 +101,11 @@
 
 Директория: [lesson_10](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_10)
 
-Своя работа (ДЗ):
 - [homework/test_skip.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_10/homework/test_skip.py) — skip по соотношению сторон
 - [homework/test_parametrize.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_10/homework/test_parametrize.py) — indirect
 - [homework/test_fixtures.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_10/homework/test_fixtures.py) — разные фикстуры
 - [NOTES.md](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_10/NOTES.md) — плюсы/минусы
-
-Примеры с занятия: [examples](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_10/examples)
+- [examples](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_10/examples) — примеры с занятия
 
 ## Запуск
 
