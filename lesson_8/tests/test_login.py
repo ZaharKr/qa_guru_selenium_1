@@ -1,12 +1,18 @@
+import allure
 import pytest
 
 
+@allure.epic("one-page-form")
+@allure.feature("Login")
+@allure.title("Успешный логин")
 @pytest.mark.login
 @pytest.mark.smoke
 def test_success_login(login_page):
-    login_page.login("user1", "password1")
-    assert login_page.is_success()
-    assert "user1" in login_page.welcome_text()
+    with allure.step("Логин user1/password1"):
+        login_page.login("user1", "password1")
+    with allure.step("Проверка success"):
+        assert login_page.is_success()
+        assert "user1" in login_page.welcome_text()
 
 
 @pytest.mark.login

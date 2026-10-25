@@ -83,26 +83,27 @@
 - [tests/test_viewport_indirect.py](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_8/tests/test_viewport_indirect.py)
 - [NOTES.md](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_8/NOTES.md)
 
+## lesson_9 — Pytest #3 (Allure / BDD / unittest / mocks)
+
+Директория: [lesson_9](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_9)
+
+Примеры с занятия:
+- [examples/allure_the_simplest_example](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_9/examples/allure_the_simplest_example)
+- [examples/bdd_the_simplest_example](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_9/examples/bdd_the_simplest_example)
+- [examples/test_cov_the_simplest_example](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_9/examples/test_cov_the_simplest_example)
+
+Своя работа:
+- [allure_print_demo](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_9/allure_print_demo) — print-логика + Allure
+- [selenium_allure](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_9/selenium_allure) — Selenium + Allure
+- [bdd_basket](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_9/bdd_basket) — pytest-bdd
+- [unittest_demo](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_9/unittest_demo)
+- [mocks_demo](https://github.com/ZaharKr/qa_guru_selenium_1/tree/main/lesson_9/mocks_demo)
+- [NOTES.md](https://github.com/ZaharKr/qa_guru_selenium_1/blob/main/lesson_9/NOTES.md)
+
 ## Запуск
 
 ```bash
-cd lesson_5
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-python automation_practice_form/automation_practice_form_test_suite.py
-pytest TextBoxPageObject/test_text_box.py -v
-pytest TextBoxPageObjectWithPageFactory/test_text_box_pf.py -v
-python table_page_element_example/table_page_element_example.py
-
-cd ../lesson_6
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-python selenium4/drag_and_drop.py
-python selenium4/add_remove_elements.py
-python selenium4/relative_locator.py
-pytest page_factory_extended_example/test_student_registration_form_with_pf.py -v
-
-cd ../lesson_7
+cd lesson_7
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 pytest
@@ -115,4 +116,14 @@ pip install -r requirements.txt
 pytest
 pytest -m unit
 pytest -m smoke
+
+cd ../lesson_9
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+pytest allure_print_demo -v --alluredir=allure-results
+pytest selenium_allure -v --alluredir=allure-results
+pytest bdd_basket -v
+python -m unittest discover -s unittest_demo -v
+pytest mocks_demo -v
+# allure serve allure-results
 ```
